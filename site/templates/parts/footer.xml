@@ -14,6 +14,12 @@
 				alt="bsexy-logo"
 				cms:eval="src"
 				/>
+			<img
+				class="logo_text"
+				src="_BASEURL.'/site/images/type_line.svg'"
+				alt="logo_text"
+				cms:eval="src"
+				/>
 
 			<!-- Search form -->
 			<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
