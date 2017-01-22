@@ -9,5 +9,8 @@
 	"sex_movies":"סרטי סקס",
 	"sex_movies_url":"www.google.com",
 	"form":"פורום",
-	"form_url":"www.google.com"
+	"form_url":"www.google.com",
+	"rooms_for_rent": "חדרים לפי שעה",
+	"room_for_rent_url": "http://www.room4rent.co.il",
+	"button_search": "חפש"
 }
