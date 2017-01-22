@@ -1,0 +1,64 @@
+<document>
+	<footer>
+		<cms:module
+			name="articles"
+			action="show"
+			text_id="terms"
+			template="stock/article_generic.xml"
+			/>
+
+		<div>
+			<img
+				class="logo"
+				src="_BASEURL.'/site/images/logo_yellow.svg'"
+				alt="bsexy-logo"
+				cms:eval="src"
+				/>
+
+			<!-- Search form -->
+			<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
+				<label>
+					<span><cms:text constant="label_search"/></span>
+					<input
+						type="search"
+						name="query"
+						value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+						cms:optional="value"
+						/>
+				</label>
+				<button class="action" type="submit">
+					<cms:text constant="button_search"/>
+				</button>
+			</form>
+
+			<!-- phone link -->
+			<cms:module
+				name="links"
+				action="show"
+				text_id="phone"
+				template="parts/link.xml"
+				/>
+		</div>
+
+		<!-- Services categories menu -->
+		<nav>
+			<!-- Links to services outside the site -->
+			<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
+				<cms:text constant="sex_store"/>
+			</a>
+			<a href="webcam_url" target="_blank" class="service" cms:constant="href">
+				<cms:text constant="erotic_calls"/>
+			</a>
+			<a href="room_for_rent_url" target="_blank" class="service" cms:constant="href">
+				<cms:text constant="rooms_for_rent"/>
+			</a>
+			<cms:module
+				name="shop"
+				action="show_category_list"
+				parent="services"
+				order_by="order"
+				template="parts/services_menu_item.xml"
+				/>
+		</nav>
+	</footer>
+</document>
