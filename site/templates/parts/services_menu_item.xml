@@ -1,0 +1,8 @@
+<document>
+	<a
+		href="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"
+		cms:eval="href"
+		>
+		<cms:var param="title" multilanguage="yes"/>
+	</a>
+</document>

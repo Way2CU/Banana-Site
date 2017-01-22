@@ -8,7 +8,7 @@
 		</head>
 
 		<body>
-			<h1>ברוך אתה ה'</h1>
+			<cms:template file="parts/header.xml"/>
 		</body>
 	</html>
 </document>
