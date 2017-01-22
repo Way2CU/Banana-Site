@@ -10,21 +10,27 @@
 					cms:eval="href"
 					>
 					<img
-						src="_BASEURL.'/site/images/logo-vector.svg'"
+						src="_BASEURL.'/site/images/logo_yellow.svg'"
 						alt="bsexy-logo"
 						cms:eval="src"
 						/>
 				</a>
 
 				<!-- Links to services outside the site -->
-				<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
-					<cms:text constant="sex_store"/>
+				<a href="sex_movies_url" target="_blank" class="service" cms:constant="href">
+					<cms:text constant="sex_movies"/>
 				</a>
 				<a href="webcam_url" target="_blank" class="service" cms:constant="href">
+					<cms:text constant="webcam"/>
+				</a>
+				<a href="erotic_calls_url" target="_blank" class="service" cms:constant="href">
 					<cms:text constant="erotic_calls"/>
 				</a>
-				<a href="room_for_rent_url" target="_blank" class="service" cms:constant="href">
-					<cms:text constant="rooms_for_rent"/>
+				<a href="form_url" target="_blank" class="service" cms:constant="href">
+					<cms:text constant="form"/>
+				</a>
+				<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
+					<cms:text constant="sex_store"/>
 				</a>
 
 				<!-- phone link -->
