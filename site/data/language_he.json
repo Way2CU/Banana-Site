@@ -12,5 +12,6 @@
 	"form_url":"www.google.com",
 	"rooms_for_rent": "חדרים לפי שעה",
 	"room_for_rent_url": "http://www.room4rent.co.il",
-	"button_search": "חפש"
+	"button_search": "חפש",
+	"label_search":"חיפוש"
 }
