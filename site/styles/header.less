@@ -1,0 +1,118 @@
+/**
+ * Header Style Sheet
+ * Banana site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors: Iliya melishev, Tal Reznic
+ */
+
+header {
+	display: block;
+	width: 100%;
+}
+
+header div.main {
+	display: block;
+	padding: 0 calc(~'(100% - 1200px)' / 2 );
+}
+
+header div.main a.logo {
+	width: 200px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 0;
+}
+
+header div.main a.log img {
+	display: block;
+	width: 100%;
+}
+
+header div.main a {
+	color: @color_white;
+	text-decoration: none;
+	font-weight: 700;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1.5em 0.8em;
+	transition: all 0.3s;
+}
+
+header div.main a:hover {
+	color: lighten(@color_yellow_dark, 10%)
+}
+
+header div.main a.phone {
+	padding-left: 0;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+header div.main a.phone:before {
+	content: "";
+	display: block;
+	background-image: url(../images/footer-note-vector.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 430px 15px;
+	width: 430px;
+	height: 15px;
+}
+
+/*
+* HEADER NAV BAR
+*/
+
+header nav {
+	display: block;
+	background-color: @color_grey;
+	border-top: 1px solid @color_yellow_dark;
+	border-bottom: 1px solid @color_yellow_dark;
+	padding: 0 calc(~'(100% - 1200px)' / 2);
+	text-align: center;
+}
+
+header nav a {
+	text-decoration: none;
+	color: @color_white;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1em;
+	font-weight: 700;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s;
+}
+
+header nav a span {
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -11px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: #fff;
+}
+
+
+header nav a:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: 0.5em;
+	background-color: @color_yellow_dark;
+	height: 1px;
+	transition-property: left, right;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+}
+
+header nav a:hover:before {
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
