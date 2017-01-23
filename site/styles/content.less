@@ -236,11 +236,19 @@ section.item_details div.information a.phone:hover {
 }
 
 section.item_details div.item_categories a {
+	display: inline-block;
+	vertical-align: middle;
 	text-decoration: none;
 	color: white;
 	font-weight: 700;
-	display: inline-block;
-	vertical-align: middle;
+	padding: 0.5em;
+	margin: 0.5em;
+	border: 1px solid @color_white;
+	transition: all 0.3s;
+}
+
+section.item_details div.item_categories a:hover {
+	background-color: @color_yellow_dark;
 }
 
 section.item_details div.item_categories a span {
@@ -256,9 +264,9 @@ section.item_details div.item_gallery {
 section.item_details div.item_gallery div.main_image {
 	display: inline-block;
 	vertical-align: middle;
-	width: 450px;
+	width: 440px;
 	position: relative;
-	min-height: 480px;
+	min-height: 485px;
 }
 
 section.item_details div.item_gallery div.main_image img {
@@ -272,22 +280,42 @@ section.item_details div.item_gallery div.thumbnails {
 	display: inline-block;
 	vertical-align: top;
 	min-height: 480px;
-}
-
-section.item_details div.item_gallery div.thumbnails div.controllers {
-	display: block;
-	width: 100%;
-	background-color: red;
-	height: 67px;
+	position: relative;
+	width: 125px;
 }
 
 section.item_details div.item_gallery div.thumbnails img {
-	display: block;
-	margin: 1em auto;
-	margin-top: 0em;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	border: 1px solid fade(@color_white, 20%);
 }
 
+section.item_details div.item_gallery div.thumbnails div.controllers {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: @color_grey;
+	height: 35px;
+	width: 100%;
+}
+
+section.item_details div.item_gallery div.thumbnails div.controllers a {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+section.item_details div.item_gallery div.thumbnails div.controllers a svg {
+	border: 1px solid @color_yellow_dark;
+	fill: @color_white;
+	width: 100%;
+	height: 100%;
+}
 /**
  * Banners
  */
