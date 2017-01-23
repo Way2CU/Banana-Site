@@ -11,6 +11,39 @@
 			<!-- Top section of the site -->
 			<cms:template file="parts/header.xml"/>
 
+			<!-- Desktop version of home page -->
+			<cms:desktop>
+				<section>
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="escort"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="apartments"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="massage"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="private"
+						template="parts/category_preview.xml"
+						/>
+				</section>
+			</cms:desktop>
+
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
 		</body>

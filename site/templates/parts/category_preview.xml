@@ -1,0 +1,97 @@
+<document>
+	<cms:if condition="!isset($template['service_area'])">
+		<section class="promoted">
+			<!-- Category title -->
+			<a
+				class="title"
+				href="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"
+				cms:eval="href"
+				>
+				<h1><cms:var param="title" multilanguage="yes"/></h1>
+			</a>
+
+
+			<!-- Promoted items -->
+			<div class="category_items">
+				<cms:module
+				name="shop"
+				action="show_item_list"
+				category="$params['id']"
+				order_by="priority"
+				order_asc="0"
+				limit="6"
+				template="parts/promoted_items.xml"
+				cms:eval="category"
+				/>
+			</div>
+
+			<!-- Banners-->
+			<div class="commercial">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="$params['text_id']"
+					random="1"
+					limit="1"
+					template="parts/commercial.xml"
+					cms:eval="group"
+					/>
+			</div>
+		</section>
+	</cms:if>
+
+	<cms:if condition="isset($template['service_area'])">
+		<section class="subcategory" id="$params['text_id']" cms:eval="id">
+			<!-- Category title -->
+			<div class="title">
+				<h3><cms:var param="title" multilanguage="yes"/></h3>
+				<a
+					href="URL::make(array('service' => $_REQUEST['service'], 'area' => $params['text_id']))"
+					class="show action"
+					cms:eval="href"
+					>
+					<cms:text constant="button_show_more"/>
+				</a>
+			</div>
+
+			<cms:markdown param="description" multilanguage="yes"/>
+
+			<!-- Promoted items -->
+			<div class="category_items">
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					category="$params['id']"
+					order_by="priority"
+					order_asc="0"
+					limit="6"
+					template="parts/promoted_items.xml"
+					cms:eval="category"
+					>
+					<cms:transfer target="area" name="text_id"/>
+				</cms:module>
+
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="$params['text_id']"
+					template="stock/article_generic.xml"
+					cms:eval="text_id"
+					/>
+			</div>
+
+			<!-- Banners-->
+			<div class="commercial">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="$params['text_id']"
+					limit="1"
+					random="1"
+					template="parts/commercial.xml"
+					cms:eval="group"
+					/>
+			</div>
+		</section>
+	</cms:if>
+</document>
