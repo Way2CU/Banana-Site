@@ -259,29 +259,39 @@ section.item_details div.item_gallery {
 	display: inline-block;
 	vertical-align: middle;
 	width: 50%;
+	position: relative;
 }
 
 section.item_details div.item_gallery div.main_image {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	width: 440px;
 	position: relative;
-	min-height: 485px;
+	height: 480px;
+	overflow: hidden;
 }
 
-section.item_details div.item_gallery div.main_image img {
+section.item_details div.item_gallery div.main_image img.big_image {
 	position: absolute;
 	top: 0;
 	right: 0;
 	border: 1px solid fade(@color_yellow, 20%);
+	visibility: hidden;
+	opacity: 0;
+}
+
+section.item_details div.item_gallery div.main_image img.big_image.visible {
+	visibility: visible;
+	opacity: 1;
 }
 
 section.item_details div.item_gallery div.thumbnails {
 	display: inline-block;
 	vertical-align: top;
-	min-height: 480px;
+	height: 480px;
 	position: relative;
 	width: 125px;
+	overflow: hidden;
 }
 
 section.item_details div.item_gallery div.thumbnails img {
@@ -290,19 +300,27 @@ section.item_details div.item_gallery div.thumbnails img {
 	left: 50%;
 	transform: translateX(-50%);
 	border: 1px solid fade(@color_white, 20%);
+	visibility: hidden;
+	height: 146px;
+	opacity: 0;
+	transtion: all 0.3s;
 }
 
-section.item_details div.item_gallery div.thumbnails div.controllers {
+section.item_details div.item_gallery div.thumbnails img.visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+section.item_details div.item_gallery div.controllers {
 	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
+	top: 105%;
+	left: 35px;
 	background-color: @color_grey;
 	height: 35px;
-	width: 100%;
+	width: 125px;
 }
 
-section.item_details div.item_gallery div.thumbnails div.controllers a {
+section.item_details div.item_gallery div.controllers a {
 	display: inline-block;
 	vertical-align: middle;
 	width: 50%;
@@ -310,7 +328,7 @@ section.item_details div.item_gallery div.thumbnails div.controllers a {
 	text-align: center;
 }
 
-section.item_details div.item_gallery div.thumbnails div.controllers a svg {
+section.item_details div.item_gallery div.controllers a svg {
 	border: 1px solid @color_yellow_dark;
 	fill: @color_white;
 	width: 100%;

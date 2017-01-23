@@ -14,6 +14,7 @@
 				<cms:raw text=" "/>
 				<cms:text constant="site_title_end"/>
 			</title>
+			<cms:collection include="page_control,animation_chain"/>
 			<cms:module name="head_tag" action="print_tag"/>
 
 			<!-- Canonical item link -->

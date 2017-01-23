@@ -54,7 +54,6 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
-					limit="3"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
@@ -68,22 +67,21 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
-					limit="3"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
 					<param name="thumbnail_image" value=""/>
 				</cms:module>
+			</div>
+			<!-- Div controllers -->
 				<div class="controllers">
-					<a href="javascript:void(0)">
+					<a href="javascript:void(0)" class="prev">
 					<cms:svg file="site-sprite.svg" symbol="arrow-up" />
 					</a>
-					<a href="javascript:void(0)">
+					<a href="javascript:void(0)" class="next">
 					<cms:svg file="site-sprite.svg" symbol="arrow-down" />
 					</a>
 				</div>
-
-			</div>
 		</div>
 	</cms:desktop>
 </document>
