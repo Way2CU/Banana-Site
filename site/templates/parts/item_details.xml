@@ -74,7 +74,14 @@
 					>
 					<param name="thumbnail_image" value=""/>
 				</cms:module>
-				<div class="controllers"></div>
+				<div class="controllers">
+					<a href="javascript:void(0)">
+					<cms:svg file="site-sprite.svg" symbol="arrow-up" />
+					</a>
+					<a href="javascript:void(0)">
+					<cms:svg file="site-sprite.svg" symbol="arrow-down" />
+					</a>
+				</div>
 
 			</div>
 		</div>
