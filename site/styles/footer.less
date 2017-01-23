@@ -128,6 +128,24 @@ footer nav a {
 	transition: all 0.3s;
 	box-sizing: border-box;
 	font-weight: 700;
+	position: relative;
+	overflow: hidden;
+}
+
+footer nav a:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+	width: 100%;
+	height: 0.1em;
+	background:
+	    linear-gradient(135deg, fade(@color_grey, 100%) 10%, @color_yellow 100%);
+	transition: all 0.3s;
+}
+
+footer nav a:hover:before {
+	left: 0;
 }
 
 footer nav a span {
@@ -140,8 +158,4 @@ footer nav a span {
 	width: 2.5em;
 	height: 1.3em;
 	fill: #fff;
-}
-
-footer nav a:hover {
-	color: @color_yellow_dark;
 }
