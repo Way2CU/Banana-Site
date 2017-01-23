@@ -303,7 +303,7 @@ section.item_details div.item_gallery div.thumbnails img {
 	visibility: hidden;
 	height: 146px;
 	opacity: 0;
-	transtion: all 0.3s;
+	transition: all 0.1s;
 }
 
 section.item_details div.item_gallery div.thumbnails img.visible {
@@ -318,6 +318,7 @@ section.item_details div.item_gallery div.controllers {
 	margin-left: 35px;
 	margin-right: auto;
 	margin-top: 1em;
+	background-color: @color_grey;
 }
 
 section.item_details div.item_gallery div.controllers a {
@@ -326,6 +327,10 @@ section.item_details div.item_gallery div.controllers a {
 	width: 50%;
 	height: 100%;
 	text-align: center;
+}
+
+section.item_details div.item_gallery div.controllers a:active {
+	background-color: @color_yellow_dark;
 }
 
 section.item_details div.item_gallery div.controllers a svg {
