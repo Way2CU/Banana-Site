@@ -209,7 +209,7 @@ div.commercial {
 }
 
 section.footer_commercial a,
-div.commercial a.link {
+a.link {
 	display: inline-block;
 	vertical-align: middle;
 	text-decoration: none;
@@ -222,6 +222,15 @@ div.commercial a.link {
 	height: 200px;
 	width: 560px;
 	transition: all 0.3s;
+}
+
+div.category_items a.link {
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+div.category_items a.link:nth-of-type(2n) {
+	margin-right: 10px;
 }
 
 section.footer_commercial a {
@@ -244,7 +253,7 @@ section.footer_commercial a:before {
 }
 
 section.footer_commercial a:hover,
-div.commercial a.link:hover {
+a.link:hover {
 	border-color: @color_yellow;
 }
 
