@@ -1,0 +1,3 @@
+<document>
+	<cms:var name="strip_tags($params['title'][$language])"/>
+</document>

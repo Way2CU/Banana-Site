@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['service']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					/>
+				<cms:raw text=" - "/>
+				<cms:text constant="site_title"/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					/>
+				<cms:raw text=" "/>
+				<cms:text constant="site_title_end"/>
+			</title>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body>
+			<!-- Top part of the site -->
+			<cms:template file="parts/header.xml"/>
+
+			<section class="category_areas">
+				<!-- Show area menu -->
+				<cms:template file="parts/area_menu.xml"/>
+
+				<!-- Category title -->
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/category.xml"
+					cms:eval="text_id"
+					/>
+
+				<!-- Category items -->
+				<div class="category_items">
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['area']"
+						order_by="priority"
+						order_asc="0"
+						template="parts/category_items.xml"
+						cms:eval="category"
+						/>
+
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="$_REQUEST['area']"
+						template="stock/article_generic.xml"
+						cms:eval="text_id"
+						>
+						<param name="title" value=""/>
+					</cms:module>
+				</div>
+
+				<!-- Category page banners -->
+				<div class="commercial">
+					<cms:module
+						name="links"
+						action="show_link_list"
+						group="$_REQUEST['area']"
+						random="1"
+						template="parts/commercial.xml"
+						cms:eval="group"
+						/>
+				</div>
+			</section>
+
+			<section class="footer_commercial">
+				<cms:module
+					name="links"
+					action="show_group"
+					text_id="footer_banners"
+					template="parts/links_group_title.xml"
+					/>
+
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="footer_banners"
+					limit="5"
+					random="1"
+					template="parts/footer_commercial.xml"
+					/>
+			</section>
+
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>

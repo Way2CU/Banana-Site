@@ -1,5 +1,5 @@
 {
-	"site_title": "Banana",
+	"site_title": "Banana ",
 	"webcam": "מצלמות צ'ט לייב",
 	"webcam_url": "http://www.cam69.co.il",
 	"sex_store": "חנות סקס",
@@ -13,5 +13,6 @@
 	"rooms_for_rent": "חדרים לפי שעה",
 	"room_for_rent_url": "http://www.room4rent.co.il",
 	"button_search": "חפש",
-	"label_search":"חיפוש"
+	"label_search":"חיפוש",
+	"search_results": "תוצאות חיפוש"
 }

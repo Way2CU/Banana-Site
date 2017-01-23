@@ -1,0 +1,24 @@
+<document>
+	<li class="area">
+		<cms:desktop>
+			<a href="javascript:void(0);"><cms:var param="title" multilanguage="yes"/></a>
+		</cms:desktop>
+
+		<cms:mobile>
+			<input type="checkbox" id="$params['id']" cms:eval="id"/>
+			<label for="$params['id']" cms:eval="for">
+				<cms:var param="title" multilanguage="yes"/>
+			</label>
+		</cms:mobile>
+
+		<ul>
+			<cms:module
+				name="shop"
+				action="show_category_list"
+				parent_id="$params['id']"
+				template="parts/areas_item.xml"
+				cms:eval="parent_id"
+				/>
+		</ul>
+	</li>
+</document>
