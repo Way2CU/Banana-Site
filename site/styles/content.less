@@ -11,7 +11,9 @@ section {
 }
 
 section.footer_commercial {
-	padding: 1em calc(~'(100% - 1200px)' / 2);
+	text-align: center;
+	padding: 0em calc(~'(100% - 1200px)' / 2);
+	padding-bottom: 2em;
 }
 
 section.promoted {
@@ -53,10 +55,6 @@ section > h1 {
 	position: relative;
 	overflow: hidden;
 	width: 500px;
-}
-
-section.footer_commercial h2 {
-	margin-bottom: 0;
 }
 
 div.item_categories a span,
@@ -227,8 +225,10 @@ div.commercial a.link {
 }
 
 section.footer_commercial a {
-	width: 200px;
-	height: 200px;
+	width: 180px;
+	height: 180px;
+	margin-left: 30px;
+	margin-right: 30px;
 	position: relative;
 }
 
@@ -240,16 +240,7 @@ section.footer_commercial a:before {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: fade(@color_white, 90%);
-}
-
-section.footer_commercial a:nth-of-type(n+2) {
-	margin-left: 50px;
-}
-
-html[dir="rtl"] section.footer_commercial a:nth-of-type(n+2) {
-	margin-left: auto;
-	margin-right: 50px;
+	background-color: fade(@color_grey, 90%);
 }
 
 section.footer_commercial a:hover,
