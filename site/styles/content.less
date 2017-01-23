@@ -222,8 +222,7 @@ section.item_details div.information p {
 section.item_details div.information a.phone {
 	display: inline-block;
 	padding: 0.5em 1em;
-	background-color: @color_yellow;
-	color: black;
+	color: @color_white;
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 1.3em;
@@ -232,23 +231,31 @@ section.item_details div.information a.phone {
 }
 
 section.item_details div.information a.phone:hover {
-	background-color: @color_yellow_dark;
+	background-color: fade(@color_yellow, 20%);
+}
+
+section.item_details div.information a.phone:before {
+	left: 0;
+}
+
+section.item_details div.information a.phone:after {
+	right: 0;
 }
 
 section.item_details div.item_categories a {
 	display: inline-block;
 	vertical-align: middle;
 	text-decoration: none;
-	color: white;
+	color: @color_white;
+	background-color: @color_grey;
 	font-weight: 700;
 	padding: 0.5em;
 	margin: 0.5em;
-	border: 1px solid @color_white;
 	transition: all 0.3s;
 }
 
 section.item_details div.item_categories a:hover {
-	background-color: @color_yellow_dark;
+	background-color: @color_grey;
 }
 
 section.item_details div.item_categories a span {
