@@ -32,7 +32,7 @@
 						cms:optional="value"
 						/>
 				</label>
-				<button class="action" type="submit">
+				<button type="submit">
 					<cms:text constant="button_search"/>
 				</button>
 			</form>
@@ -49,19 +49,19 @@
 		<!-- Services categories menu -->
 		<nav>
 			<!-- Links to services outside the site -->
-			<a href="sex_movies_url" target="_blank" class="service" cms:constant="href">
+			<a href="sex_movies_url" target="_blank" class="service action" cms:constant="href">
 				<cms:text constant="sex_movies"/>
 			</a>
-			<a href="webcam_url" target="_blank" class="service" cms:constant="href">
+			<a href="webcam_url" target="_blank" class="service action" cms:constant="href">
 				<cms:text constant="webcam"/>
 			</a>
-			<a href="erotic_calls_url" target="_blank" class="service" cms:constant="href">
+			<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
 				<cms:text constant="erotic_calls"/>
 			</a>
-			<a href="form_url" target="_blank" class="service" cms:constant="href">
+			<a href="form_url" target="_blank" class="service action" cms:constant="href">
 				<cms:text constant="form"/>
 			</a>
-			<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
+			<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
 				<cms:text constant="sex_store"/>
 			</a>
 
