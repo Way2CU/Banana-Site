@@ -54,7 +54,7 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
-					limit="4"
+					limit="3"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
@@ -68,12 +68,14 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
-					limit="4"
+					limit="3"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
 					<param name="thumbnail_image" value=""/>
 				</cms:module>
+				<div class="controllers"></div>
+
 			</div>
 		</div>
 	</cms:desktop>
