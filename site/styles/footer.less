@@ -80,7 +80,7 @@ footer div form label span {
 	padding-left: 1em;
 }
 
-footer div form button.action {
+footer div form button {
 	border-radius: 5px 0px 0px 5px;
 	border: 1px solid transparent;
 	padding: 0.8em;
@@ -93,7 +93,7 @@ footer div form button.action {
 	transition: all 0.3s;
 }
 
-footer div form button.action:hover {
+footer div form button:hover {
 	color: @color_white;
 }
 
@@ -133,22 +133,6 @@ footer nav a {
 	font-weight: 700;
 	position: relative;
 	overflow: hidden;
-}
-
-footer nav a:before {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: -100%;
-	width: 100%;
-	height: 0.1em;
-	background:
-	    linear-gradient(135deg, fade(@color_grey, 100%) 10%, @color_yellow 100%);
-	transition: all 0.3s;
-}
-
-footer nav a:hover:before {
-	left: 0;
 }
 
 footer nav a span {
