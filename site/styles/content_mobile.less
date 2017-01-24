@@ -380,6 +380,7 @@ section.footer_commercial a,
 a.link {
 	display: inline-block;
 	vertical-align: middle;
+	margin: 5px 0px;
 	text-decoration: none;
 	color: @color_white;
 	box-sizing: border-box;
@@ -387,12 +388,18 @@ a.link {
 	background-position: center top;
 	background-size: cover;
 	border: 1px solid @color_white;
-	width: 264px;
-	height: calc(~'264px *' (200 / 560));
+	width: 304px;
+	height: calc(~'304px *' (200 / 560));
 	transition: all 0.3s;
 }
 
+section.category_areas a.link {
+	width: 264px;
+	height: calc(~'264px *' (200 / 560));
+}
+
 div.category_items a.link {
+	margin-top: 0;
 	margin-bottom: 5px;
 }
 
