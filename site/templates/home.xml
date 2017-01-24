@@ -44,6 +44,163 @@
 				</section>
 			</cms:desktop>
 
+			<!-- Mobile version home page -->
+			<cms:mobile>
+				<section>
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="escort"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="private"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="images"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="apartments"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip2"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="massage"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="discreet"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="spa"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="transgender"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="gays"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="sado"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="required"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<!-- Manual category links -->
+					<a
+						class="category"
+						href="porn_movies_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="movies"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="sex_movies"/>
+						</h3>
+					</a>
+
+					<a
+						class="category"
+						href="webcam_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="webcam"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="webcam"/>
+						</h3>
+					</a>
+
+					<a
+						class="category"
+						href="forum_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="forum"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="form"/>
+						</h3>
+					</a>
+
+				</section>
+
+				<!-- Banners-->
+				<div class="commercial">
+					<cms:module
+						name="links"
+						action="show_link_list"
+						group="mobile_home_page_banners"
+						random="1"
+						template="parts/commercial.xml"
+						/>
+				</div>
+			</cms:mobile>
+
 			<section class="footer_commercial">
 				<cms:module
 					name="links"

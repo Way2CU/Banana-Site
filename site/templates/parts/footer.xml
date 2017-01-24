@@ -1,77 +1,106 @@
 <document>
 	<footer>
-		<cms:module
-			name="articles"
-			action="show"
-			text_id="terms"
-			template="stock/article_generic.xml"
-			/>
-
-		<div>
-			<img
-				class="logo"
-				src="_BASEURL.'/site/images/logo_yellow.svg'"
-				alt="bsexy-logo"
-				cms:eval="src"
-				/>
-			<img
-				class="logo_text"
-				src="_BASEURL.'/site/images/type_line.svg'"
-				alt="logo_text"
-				cms:eval="src"
-				/>
-
-			<!-- Search form -->
-			<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
-				<label>
-					<span><cms:text constant="label_search"/></span>
-					<input
-						type="search"
-						name="query"
-						value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
-						cms:optional="value"
-						/>
-				</label>
-				<button type="submit">
-					<cms:text constant="button_search"/>
-				</button>
-			</form>
-
-			<!-- phone link -->
+		<!-- Desktop version footer content -->
+		<cms:desktop>
 			<cms:module
-				name="links"
+				name="articles"
 				action="show"
-				text_id="phone"
-				template="parts/link.xml"
+				text_id="terms"
+				template="stock/article_generic.xml"
 				/>
-		</div>
 
-		<!-- Services categories menu -->
-		<nav>
-			<!-- Links to services outside the site -->
-			<a href="sex_movies_url" target="_blank" class="service action" cms:constant="href">
-				<cms:text constant="sex_movies"/>
-			</a>
-			<a href="webcam_url" target="_blank" class="service action" cms:constant="href">
-				<cms:text constant="webcam"/>
-			</a>
-			<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
-				<cms:text constant="erotic_calls"/>
-			</a>
-			<a href="form_url" target="_blank" class="service action" cms:constant="href">
-				<cms:text constant="form"/>
-			</a>
-			<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
-				<cms:text constant="sex_store"/>
-			</a>
+			<div>
+				<img
+					class="logo"
+					src="_BASEURL.'/site/images/logo_yellow.svg'"
+					alt="bsexy-logo"
+					cms:eval="src"
+					/>
+				<img
+					class="logo_text"
+					src="_BASEURL.'/site/images/type_line.svg'"
+					alt="logo_text"
+					cms:eval="src"
+					/>
 
-			<cms:module
-				name="shop"
-				action="show_category_list"
-				parent="services"
-				order_by="order"
-				template="parts/services_menu_item.xml"
-				/>
-		</nav>
+				<!-- Search form -->
+				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
+					<label>
+						<span><cms:text constant="label_search"/></span>
+						<input
+							type="search"
+							name="query"
+							value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+							cms:optional="value"
+							/>
+					</label>
+					<button type="submit">
+						<cms:text constant="button_search"/>
+					</button>
+				</form>
+
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+			</div>
+
+			<!-- Services categories menu -->
+			<nav>
+				<!-- Links to services outside the site -->
+				<a href="sex_movies_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="sex_movies"/>
+				</a>
+				<a href="webcam_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="webcam"/>
+				</a>
+				<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="erotic_calls"/>
+				</a>
+				<a href="form_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="form"/>
+				</a>
+				<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="sex_store"/>
+				</a>
+
+				<cms:module
+					name="shop"
+					action="show_category_list"
+					parent="services"
+					order_by="order"
+					template="parts/services_menu_item.xml"
+					/>
+			</nav>
+		</cms:desktop>
+
+		<!-- Mobile version footer content -->
+		<cms:mobile>
+			<div>
+				<img
+					class="logo"
+					src="_BASEURL.'/site/images/logo_yellow.svg'"
+					alt="bsexy-logo"
+					cms:eval="src"
+					/>
+				<img
+					class="logo_text"
+					src="_BASEURL.'/site/images/type_line.svg'"
+					alt="logo_text"
+					cms:eval="src"
+					/>
+
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+			</div>
+		</cms:mobile>
 	</footer>
 </document>

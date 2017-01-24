@@ -113,13 +113,15 @@
 						/>
 					<!-- manual service links -->
 					<a
+						class="action"
 						target="_blank"
 						href="porn_movies_url"
 						cms:constant="href"
 						>
-						<cms:text constant="porn_movies"/>
+						<cms:text constant="sex_movies"/>
 					</a>
 					<a
+						class="action"
 						target="_blank"
 						href="webcam_url"
 						cms:constant="href"
@@ -127,11 +129,12 @@
 						<cms:text constant="webcam"/>
 					</a>
 					<a
+						class="action"
 						target="_blank"
 						href="forum_url"
 						cms:constant="href"
 						>
-						<cms:text constant="forum"/>
+						<cms:text constant="form"/>
 					</a>
 					<!-- Links to services outside the site -->
 					<a href="sex_movies_url" target="_blank" class="service action" cms:constant="href">

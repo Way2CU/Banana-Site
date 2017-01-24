@@ -1,0 +1,45 @@
+/**
+ * Content Style Sheet
+ *
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors: Iliya melishev, Tal Reznic
+ */
+
+section {
+	padding: 1em 0.5em;
+	text-align: center;
+}
+
+/**
+* Home page categories links
+*/
+
+a.category {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	color: @color_white;
+	font-weight: 700;
+	width: 150px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid @color_yellow;
+}
+
+a.category img {
+	display: block;
+}
+
+a.category h3.title {
+	position: absolute;
+	margin: 0;
+	padding: 1em 0em;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	font-size: 1em;
+	background-color: fade(@color_black, 80%);
+}
