@@ -74,14 +74,14 @@
 				</cms:module>
 			</div>
 			<!-- Div controllers -->
-				<div class="controllers">
-					<a href="javascript:void(0)" class="prev">
-					<cms:svg file="site-sprite.svg" symbol="arrow-up" />
-					</a>
-					<a href="javascript:void(0)" class="next">
-					<cms:svg file="site-sprite.svg" symbol="arrow-down" />
-					</a>
-				</div>
+			<div class="controllers">
+				<a href="javascript:void(0)" class="prev">
+				<cms:svg file="site-sprite.svg" symbol="arrow-up" />
+				</a>
+				<a href="javascript:void(0)" class="next">
+				<cms:svg file="site-sprite.svg" symbol="arrow-down" />
+				</a>
+			</div>
 		</div>
 	</cms:desktop>
 
@@ -114,6 +114,16 @@
 					>
 					<param name="thumbnail_image" value=""/>
 				</cms:module>
+			</div>
+
+			<!-- Div controllers -->
+			<div class="controllers">
+				<a href="javascript:void(0)" class="prev">
+				<cms:svg file="site-sprite.svg" symbol="arrow-up" />
+				</a>
+				<a href="javascript:void(0)" class="next">
+				<cms:svg file="site-sprite.svg" symbol="arrow-down" />
+				</a>
 			</div>
 
 			<!-- Information -->
