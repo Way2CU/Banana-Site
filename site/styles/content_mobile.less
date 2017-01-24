@@ -257,7 +257,99 @@ div.item a.phone:after {
 
 /**
  * Details page
- */
+*/
+
+section.item_details div.main_image {
+	display: block;
+	width: 100%;
+	min-height: 300px;
+	margin: 0 auto;
+	position: relative;
+}
+
+section.item_details div.main_image img {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	visibility: hidden;
+	opacity: 0;
+}
+
+section.item_details div.main_image img.visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+section.item_details div.controllers {
+	display: block;
+	width: 100%;
+}
+
+section.item_details div.controllers a {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1em;
+}
+
+section.item_details div.controllers a.next {
+	transform: rotate(90deg);
+}
+
+section.item_details div.controllers a.prev {
+	transform: rotate(90deg);
+}
+
+section.item_details div.controllers a svg {
+	width: 35px;
+	height: 35px;
+	display: block;
+	margin: 0 auto;
+	fill: white;
+}
+
+section.item_details div.information a.phone {
+	display: inline-block;
+	padding: 0.5em 1em;
+	color: @color_white;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.3em;
+	margin: 1em 0;
+	transition: all 0.3s;
+	background-color: fade(@color_yellow, 20%);
+}
+
+section.item_details div.information img.note {
+	display: block;
+	height: auto;
+	width: 90%;
+	margin: 0 auto;
+}
+
+section.item_details div.information a.phone:before {
+	left: 0;
+}
+
+section.item_details div.information a.phone:after {
+	right: 0;
+}
+
+section.item_details div.item_categories a {
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	color: @color_white;
+	background-color: @color_grey;
+	font-weight: 700;
+	padding: 0.5em;
+	margin: 0.5em;
+	transition: all 0.3s;
+}
+
+section.item_details div.item_categories a span {
+	background-position: center -9px;
+}
 
 /**
  * Banners
