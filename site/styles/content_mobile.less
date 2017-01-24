@@ -11,10 +11,37 @@ section {
 	text-align: center;
 }
 
+section.footer_commercial h2,
+section > h1 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0em;
+	text-align: center;
+	padding: 0.2em 0em;
+	font-size: 1.2em;
+	background-color: @color_grey;
+	border: 1px solid @color_white;
+	position: relative;
+	overflow: hidden;
+}
+
+div.item_categories a span,
+section h1 span {
+	display: inline-block;
+	vertical-align: top;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -10px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: @color_white;
+}
+
 /**
 * Home page categories links
 */
-
 a.category {
 	display: inline-block;
 	vertical-align: top;
@@ -43,3 +70,250 @@ a.category h3.title {
 	font-size: 1em;
 	background-color: fade(@color_black, 80%);
 }
+
+/**
+ * Areas menu
+ */
+nav#areas {
+	display: block;
+	padding: 0.5em 0em;
+	text-align: center;
+}
+
+nav#areas ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav#areas > ul > li {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+nav#areas > ul > li > label {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	padding: 1em 1em;
+	font-weight: 700;
+	font-size: 1em;
+	color: @color_white;
+	position: relative;
+}
+
+nav#areas > ul > li > label:before {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	content: '';
+	margin-left: 5px;
+	border: 7px solid transparent;
+	border-top-color: #fff;
+	line-height: 0;
+	font-size: 0;
+	transform: translateY(5%) rotate(90deg);
+}
+
+nav#areas > ul > li input {
+	display: none;
+}
+
+nav#areas > ul > li input:checked + label:before {
+	transform: translateY(35%) rotate(0deg);
+	border-top-color: @color_yellow;
+}
+
+nav#areas > ul > li > label span {
+	display: inline-block;
+	vertical-align: top;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -9px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: @color_white;
+}
+
+nav#areas > ul > li > input:checked ~ ul {
+	display: block;
+}
+
+nav#areas ul li ul {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1000;
+	background-color: @color_grey;
+	border: 1px solid @color_yellow;
+	width: 95%;
+}
+
+nav#areas ul li ul li {
+	display: block;
+}
+
+nav#areas ul li ul li a {
+	display: block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	font-weight: 700;
+	color: @color_white;
+	transition: all 0.3s;
+}
+
+nav#areas ul li ul li a span {
+	display: inline-block;
+	vertical-align: top;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -9px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: @color_white;
+}
+
+div.item {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	margin-bottom: 0.4em;
+	border: 1px solid fade(@color_white, 20%);
+	width: 130px;
+	min-height: 320px;
+	position: relative;
+	overflow: hidden;
+}
+
+div.item a.image {
+	display: block;
+	text-align: center;
+	height: 130px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+div.item a.image img {
+	display: block;
+}
+
+div.item h2 {
+	margin: 0;
+	padding: 0.2em 0.2em;
+	font-size: 1em;
+}
+
+div.item p {
+	margin: 0;
+	padding-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+div.item a.phone {
+	position: absolute;
+	padding: 0.5em 0em;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	text-decoration: none;
+	color: @color_white;
+	font-weight: 700;
+	white-space: nowrap;
+	transition: all 0.3s;
+	border-radius: 0;
+}
+
+div.item a.phone:after,
+div.item a.phone:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0%;
+	width: 100%;
+	height: 0.1em;
+	background:
+	    linear-gradient(135deg, fade(@color_grey, 100%) 10%, @color_yellow 100%);
+	transition: all 0.3s;
+}
+
+div.item a.phone:after {
+	left: auto;
+	top: auto;
+	bottom: 0;
+	right: 0%;
+	background:
+	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_grey 100%);
+}
+
+/**
+ * Banners
+ */
+div.commercial {
+	display: block;
+	position: relative;
+}
+
+section.footer_commercial a,
+a.link {
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	color: @color_white;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	border: 1px solid @color_white;
+	height: 200px;
+	width: 560px;
+	transition: all 0.3s;
+}
+
+div.category_items a.link {
+	margin-bottom: 10px;
+}
+
+div.category_items a.link:nth-of-type(2n) {
+	margin-left: 10px;
+}
+
+html[dir="rtl"] div.category_items a.link:nth-of-type(2n) {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+section.footer_commercial a {
+	width: 80px;
+	height: 80px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+section.footer_commercial a:before {
+	content: attr(title);
+	position: absolute;
+	padding: 0.5em;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: fade(@color_grey, 90%);
+}
+
+section.footer_commercial a:hover,
+a.link:hover {
+	border-color: @color_yellow;
+}
+
