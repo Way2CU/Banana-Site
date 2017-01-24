@@ -54,4 +54,103 @@
 			</nav>
 		</header>
 	</cms:desktop>
+
+	<!-- Mobile version header -->
+	<cms:mobile>
+		<header>
+			<div class="mobile_title">
+				<a href="javascript:void(0)" class="menu">
+					<cms:svg file="site-sprite.svg" symbol="menu"/>
+					<cms:text constant="label_menu"/>
+				</a>
+
+				<!-- logo -->
+				<a
+					href="URL::make()"
+					class="logo"
+					cms:eval="href"
+					>
+					<img
+						src="_BASEURL.'/site/images/logo_yellow.svg'"
+						alt="bsexy-logo"
+						cms:eval="src"
+						/>
+				</a>
+			</div>
+
+			<nav class="mobile_menu">
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+
+				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
+					<label>
+						<span><cms:text constant="label_search"/></span>
+						<input
+							type="search"
+							name="query"
+							value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+							cms:optional="value"
+							/>
+					</label>
+					<button type="submit">
+						<cms:text constant="button_search"/>
+					</button>
+				</form>
+
+				<!-- Services links -->
+				<div class="services">
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						order_by="order"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+					<!-- manual service links -->
+					<a
+						target="_blank"
+						href="porn_movies_url"
+						cms:constant="href"
+						>
+						<cms:text constant="porn_movies"/>
+					</a>
+					<a
+						target="_blank"
+						href="webcam_url"
+						cms:constant="href"
+						>
+						<cms:text constant="webcam"/>
+					</a>
+					<a
+						target="_blank"
+						href="forum_url"
+						cms:constant="href"
+						>
+						<cms:text constant="forum"/>
+					</a>
+					<!-- Links to services outside the site -->
+					<a href="sex_movies_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="sex_movies"/>
+					</a>
+					<a href="webcam_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="webcam"/>
+					</a>
+					<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="erotic_calls"/>
+					</a>
+					<a href="form_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="form"/>
+					</a>
+					<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="sex_store"/>
+					</a>
+				</div>
+			</nav>
+		</header>
+	</cms:mobile>
 </document>
