@@ -190,6 +190,14 @@ div.item {
 	overflow: hidden;
 }
 
+div.item[data-priority^="2"] {
+	background-color: fade(@color_yellow, 20%);
+}
+
+div.item[data-priority^="1"] {
+	background-color: @color_grey;
+}
+
 div.item a.image {
 	display: block;
 	text-align: center;
@@ -255,6 +263,15 @@ div.item a.phone:after {
 	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_grey 100%);
 }
 
+div.item[data-priority^="2"] a.phone:after {
+	background:
+	    linear-gradient(135deg, transparent 0%, @color_yellow 100%);
+}
+
+div.item[data-priority^="2"] a.phone:before {
+	background:
+	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_white 100%);
+}
 /**
  * Details page
 */
@@ -370,22 +387,13 @@ a.link {
 	background-position: center top;
 	background-size: cover;
 	border: 1px solid @color_white;
-	height: 200px;
-	width: 560px;
+	width: 264px;
+	height: calc(~'264px *' (200 / 560));
 	transition: all 0.3s;
 }
 
 div.category_items a.link {
-	margin-bottom: 10px;
-}
-
-div.category_items a.link:nth-of-type(2n) {
-	margin-left: 10px;
-}
-
-html[dir="rtl"] div.category_items a.link:nth-of-type(2n) {
-	margin-left: 0px;
-	margin-right: 10px;
+	margin-bottom: 5px;
 }
 
 section.footer_commercial a {

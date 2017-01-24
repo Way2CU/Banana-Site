@@ -115,8 +115,12 @@ div.item:hover {
 	border-color: fade(@color_white, 50%);
 }
 
-div.category_items.gallery br {
-	display: none;
+div.item[data-priority^="2"] {
+	background-color: fade(@color_yellow, 20%);
+}
+
+div.item[data-priority^="1"] {
+	background-color: @color_grey;
 }
 
 section#search div.category_items.gallery div.item {
@@ -197,6 +201,17 @@ div.item a.phone:after {
 	right: 0%;
 	background:
 	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_grey 100%);
+}
+
+
+div.item[data-priority^="2"] a.phone:after {
+	background:
+	    linear-gradient(135deg, transparent 0%, @color_yellow 100%);
+}
+
+div.item[data-priority^="2"] a.phone:before {
+	background:
+	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_white 100%);
 }
 
 /**
