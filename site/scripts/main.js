@@ -63,7 +63,7 @@ Site.on_load = function() {
 			Site.thumbnails.images.update();
 
 		// Gallery controller for main image
-		Site.main_image = new Caracal.Gallery.Slider(1, true);
+		Site.main_image = new Caracal.Gallery.Slider(1, false);
 		Site.main_image
 			.controls.attach_next($('div.controllers a.next'))
 			.controls.attach_previous($('div.controllers a.prev'))
