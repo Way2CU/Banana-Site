@@ -26,8 +26,8 @@
 				<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
 					<cms:text constant="erotic_calls"/>
 				</a>
-				<a href="form_url" target="_blank" class="service action" cms:constant="href">
-					<cms:text constant="form"/>
+				<a href="forum_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="forum"/>
 				</a>
 				<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
 					<cms:text constant="sex_store"/>
@@ -146,8 +146,8 @@
 					<a href="erotic_calls_url" target="_blank" class="service action" cms:constant="href">
 						<cms:text constant="erotic_calls"/>
 					</a>
-					<a href="form_url" target="_blank" class="service action" cms:constant="href">
-						<cms:text constant="form"/>
+					<a href="forum_url" target="_blank" class="service action" cms:constant="href">
+						<cms:text constant="forum"/>
 					</a>
 					<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
 						<cms:text constant="sex_store"/>
