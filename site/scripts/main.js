@@ -45,12 +45,45 @@ Site.is_mobile = function() {
 	return result;
 };
 
+Site.load_agreement = function() {
+	var url = '/agreement';
+	var path = document.querySelector('meta[property]').getAttribute('content');
+	path += url;
+
+	var element = document.createElement('div');
+	element.classList.add('intro');
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			// Add content
+			element.innerHTML = this.responseText;
+			document.querySelector('body').appendChild(element);
+
+			// Assign event listenr to close agreement message
+			var button_close_agreement = document.querySelector('a.close');
+			button_close_agreement.addEventListener('click', function() {
+				document.querySelector('div.intro').remove();
+			});
+		}
+	};
+
+	xhttp.open("GET", path, true);
+	xhttp.send();
+}
+
 /**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
+
+		// condition for showing agreement page
+	if(!localStorage.getItem('agreement')) {
+		localStorage.setItem('agreement', true);
+		Site.load_agreement();
+	}
 
 	// Gallery controller for thumbnails
 		Site.thumbnails = new Caracal.Gallery.Slider(3, true);

@@ -6,6 +6,7 @@
  * Authors: Iliya melishev, Tal Reznic
  */
 
+
 section {
 	padding: 2em calc(~'(100% - 1200px)' / 2);
 	text-align: center;
@@ -563,4 +564,63 @@ nav#areas ul li ul li a:hover {
 	padding: 1em;
 	background-color: fade(white, 70%);
 	color: @color_grey;
+}
+
+/**
+ * Agreement page
+ */
+
+div.intro {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: @color_white;
+	text-align: center;
+}
+
+div.intro img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+}
+
+div.intro div.content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(180deg, fade(@color_white, 0%) 20%, @color_white);
+}
+
+div.intro div.content a.action {
+	display: inline-block;
+	text-decoration: none;
+	padding: 1em 2em;
+	color: @color_black;
+	transition: all 0.3s;
+}
+
+div.intro div.content a.action:hover {
+	background-color: @color_grey;
+	color: @color_white;
+}
+
+div.intro div.content a.action:before {
+	left: 0;
+}
+
+div.intro div.content a.action:after {
+	right: 0;
+}
+
+div.intro div.content article {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	color: @color_black;
 }

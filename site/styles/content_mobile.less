@@ -437,3 +437,63 @@ section.footer_commercial a:hover,
 a.link:hover {
 	border-color: @color_yellow;
 }
+
+/**
+ * Agreement page
+ */
+
+div.intro {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: @color_white;
+	text-align: center;
+	z-index: 10000000;
+}
+
+div.intro img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+}
+
+div.intro div.content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(180deg, fade(@color_white, 0%) 20%, @color_white);
+}
+
+div.intro div.content a.action {
+	display: inline-block;
+	text-decoration: none;
+	padding: 1em 2em;
+	background-color: @color_grey;
+	color: @color_white;
+	transition: all 0.3s;
+}
+
+div.intro div.content a.action:before {
+	left: 0;
+}
+
+div.intro div.content a.action:after {
+	right: 0;
+}
+
+div.intro div.content article {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	color: @color_black;
+}
+
+div.intro div.content article p {
+	font-size: 2.4vh;
+}
