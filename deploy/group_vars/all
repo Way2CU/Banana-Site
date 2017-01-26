@@ -1,11 +1,11 @@
 ---
 site:
-  domain: sample.com
+  domain: banana.co.il
   # subdomain: test
   # alias: domain.com
   root: httpdocs
-  username: sample
-  caracal_branch: master
+  username: banana
+  caracal_branch: release
   # ip_address: 0.0.0.0
   # owner: Some Person
   # plan: Unlimited
@@ -13,4 +13,4 @@ site:
 
 local_site_directory: ../site
 subscription_directory: "{{ plesk_vhost_directory }}/{{ site.domain }}"
-site_directory: "{{ subscription_directory }}/{{ site.root }}"
+site_directory: "/var/www/test"
