@@ -18,7 +18,7 @@
 		</a>
 		<div class="description">
 			<h2><cms:var param="name" multilanguage="yes"/></h2>
-			<cms:markdown param="description" multilanguage="yes" chars="50"/>
+			<cms:markdown param="description" multilanguage="yes" chars="20"/>
 
 			<!-- Show phone numbers -->
 			<cms:module
