@@ -1,4 +1,5 @@
 <document>
+	<cms:file svg="site-sprite.svg" />
 	<!-- Desktop version header -->
 	<cms:desktop>
 		<header>
