@@ -184,7 +184,7 @@
 							template="parts/image.xml"
 							/>
 						<h3 class="title">
-							<cms:text constant="form"/>
+							<cms:text constant="forum"/>
 						</h3>
 					</a>
 

@@ -1,0 +1,33 @@
+<document>
+	<!-- Desktop image -->
+	<cms:desktop>
+		<img
+			src="_BASEURL.'/site/images/agreement.jpg'"
+			alt="agreement"
+			cms:eval="src"
+			/>
+	</cms:desktop>
+	<!-- Mobile image -->
+	<cms:mobile>
+		<img
+			src="_BASEURL.'/site/images/mobile_agreement.jpg'"
+			alt="agreement"
+			cms:eval="src"
+			/>
+	</cms:mobile>
+	<div class="content">
+		<a
+			class="action close"
+			href="javascript:void(0)"
+			>
+			<cms:text constant="label_enter"/>
+		</a>
+		<!-- terms article -->
+		<cms:module
+			name="articles"
+			action="show"
+			text_id="terms"
+			template="stock/article_generic.xml"
+			/>
+	</div>
+</document>

@@ -1,47 +1,9 @@
 <document>
-	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
-		<head>
-			<title>
-				<cms:module
-					name="shop"
-					action="show_item"
-					id="fix_id($_REQUEST['id'])"
-					template="parts/item_title.xml"
-					cms:eval="id"
-					/>
-				<cms:raw text=" - "/>
-				<cms:text constant="site_title_end"/>
-			</title>
-			<cms:module name="page_description" action="set_page_skip"/>
-			<cms:module name="head_tag" action="print_tag"/>
-
-			<!-- Canonical item link -->
-			<link
-				rel="canonical"
-				href="URL::make(array('id' => fix_id($_REQUEST['id'])), 'view_item.xml')"
-				cms:eval="href"
-				/>
-		</head>
-
-		<body>
-			<cms:raw file="parts/gtmbody.txt"/>
-
-			<!-- Top part of the site -->
-			<cms:template file="parts/header.xml"/>
-
-			<section class="item_details">
-				<cms:module
-					name="shop"
-					action="show_item"
-					id="fix_id($_REQUEST['id'])"
-					template="parts/item_details.xml"
-					update_view_count="1"
-					cms:eval="id"
-					/>
-			</section>
-
-			<!-- Bottom section of the site -->
-			<cms:template file="parts/footer.xml"/>
-		</body>
-	</html>
+	<cms:module
+		name="shop"
+		action="show_item"
+		id="$params['id']"
+		template="parts/search_result_item.xml"
+		cms:eval="id"
+	/>
 </document>
