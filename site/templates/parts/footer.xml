@@ -1,5 +1,10 @@
 <document>
 	<footer>
+		<!-- Link to top -->
+		<a href="#" id="top" class="arrow_top">
+			<cms:svg file="site-sprite.svg" symbol="arrow-up" />
+		</a>
+
 		<!-- Desktop version footer content -->
 		<cms:desktop>
 			<cms:module

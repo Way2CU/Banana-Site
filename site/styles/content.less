@@ -6,6 +6,30 @@
  * Authors: Iliya melishev, Tal Reznic
  */
 
+/*
+ * Link to top
+*/
+
+a.arrow_top {
+	position: fixed;
+	right: 1em;
+	top: 50%;
+	fill: @color_yellow;
+	padding: 1em;
+	transition: all 0.3s;
+}
+
+a.arrow_top:hover {
+	fill: lighten(@color_yellow, 30%);
+	transform: scale(1.1);
+}
+
+a.arrow_top svg {
+	width: 3em;
+	height: 3em;
+	display: block;
+}
+
 section {
 	padding: 2em calc(~'(100% - 1200px)' / 2);
 }
