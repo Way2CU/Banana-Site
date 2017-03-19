@@ -623,7 +623,8 @@ div.intro div.content {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: linear-gradient(180deg, fade(@color_white, 50%) 20%, @color_white 80%);
+	background: fade(@color_white, 70%);
+	padding-top: 1em;
 }
 
 div.intro div.content a.action {
@@ -635,7 +636,7 @@ div.intro div.content a.action {
 }
 
 div.intro div.content a.action:hover {
-	background-color: @color_grey;
+	background-color: lighten(@color_grey, 20%);
 	color: @color_white;
 }
 
