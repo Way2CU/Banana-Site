@@ -33,6 +33,9 @@
 				<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
 					<cms:text constant="sex_store"/>
 				</a>
+				<a href="room_for_rent_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="rooms_for_rent"/>
+				</a>
 
 				<!-- phone link -->
 				<cms:module
