@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
+<document>
+	<div class="list_item">
+		<span class="column" style="width: 250px;">
+			<cms:choice value="$params['priority']" cms:eval="value">
+				<option value="25">
+					<span class="priority high"><cms:var param="on_home"/></span>
+				</option>
+				<option value="15">
+					<span class="priority medium"><cms:var param="on_home"/></span>
+				</option>
+				<option value="5" default="1">
+					<span class="priority regular"><cms:var param="on_home"/></span>
+				</option>
+			</cms:choice>
+			<cms:var param="name" multilanguage="yes"/>
+		</span>
+		<span class="column" style="width: 150px;">
+			<cms:var param="manufacturer_name"/>
+		</span>
+		<span class="column" style="width: 100px;">
+			<cms:var param="phone"/>
+		</span>
+		<span class="column" style="width: 60px;">
+			<cms:var param="views"/>
+		</span>
+		<span class="column" style="width: 50px;">
+			<cms:var param="visible_char"/>
+		</span>
+		<span class="column" style="width: 100px;">
+			<cms:var param="expires"/>
+		</span>
+		<span class="column categories" style="width: 60px;">
+			<span>...</span>
+			<ul>
+				<cms:var param="tags"/>
+			</ul>
+		</span>
+		<span class="column">
+			<cms:var param="item_change"/><cms:raw text=" "/>
+			<cms:var param="item_delete"/><cms:raw text=" "/>
+			<cms:var param="item_images"/><cms:raw text=" "/>
+			<cms:var param="item_preview"/>
+		</span>
+	</div>
+</document>
