@@ -6,6 +6,104 @@
  * Authors: Iliya melishev, Tal Reznic
  */
 
+
+ /*
+  * Link to top
+ */
+
+ a.arrow_top {
+ 	right: 0.5em;
+ 	top: 50%;
+ 	fill: @color_yellow;
+ 	padding: 1em;
+ 	transition: all 0.3s;
+ }
+
+ a.arrow_top:hover {
+ 	fill: lighten(@color_yellow, 30%);
+ 	transform: scale(1.1);
+ }
+
+ a.arrow_top svg {
+ 	width: 2em;
+ 	height: 2em;
+ 	display: block;
+ }
+
+/*
+ * Advertise Form
+*/
+
+a.phone {
+ 	font-size: 1em;
+ 	padding-top: 1em;
+ 	padding-bottom: 1em;
+ 	color: @color_white;
+ 	text-align: center;
+ 	display: block;
+ }
+
+a.phone:after {
+ 	content: "";
+ 	display: block;
+ 	background-image: url(../images/footer-note-vector.svg);
+ 	background-repeat: no-repeat;
+ 	background-position: center center;
+ 	background-size: 75% auto;
+ 	height: 15px;
+}
+
+form {
+ 	display: block;
+ 	margin-top: 1em;
+ 	border: 1px solid fade(@color_white, 50%);
+ 	box-sizing: border-box;
+ 	margin: 1em 0.5em;
+ 	position: relative;
+}
+
+form label span {
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	box-sizing: border-box;
+ 	padding: 0.7em 1em;
+ 	line-height: 1.5em;
+ 	width: 100px;
+ 	background-color: @color_grey;
+ 	color: @color_white;
+}
+
+form label input {
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	box-sizing: border-box;
+ 	padding: 0.7em 0.2em;
+ 	line-height: 1.5em;
+ 	border: none;
+ 	box-shadow: none;
+ 	background-color: fade(@color_white, 50%);
+ 	color: @color_black;
+ 	width: calc(~'(100% - 100px)');
+ 	margin: 0;
+}
+
+form label input {
+ 	width: calc(~'(100% - 100px - 3em)');
+}
+
+form button {
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	box-sizing: border-box;
+ 	border: none;
+ 	border-radius: 0;
+ 	width: 3em;
+ 	height: 2.9em;
+ 	background-color: @color_yellow;
+ 	color: @color_black;
+ 	cursor: pointer;
+}
+
 section {
 	padding: 1em 0.5em;
 	text-align: center;

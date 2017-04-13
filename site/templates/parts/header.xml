@@ -1,4 +1,5 @@
 <document>
+	<cms:svg file="site-sprite.svg" />
 	<!-- Desktop version header -->
 	<cms:desktop>
 		<header>
@@ -31,6 +32,9 @@
 				</a>
 				<a href="sex_store_url" target="_blank" class="service action" cms:constant="href">
 					<cms:text constant="sex_store"/>
+				</a>
+				<a href="room_for_rent_url" target="_blank" class="service action" cms:constant="href">
+					<cms:text constant="rooms_for_rent"/>
 				</a>
 
 				<!-- phone link -->
@@ -79,29 +83,6 @@
 			</div>
 
 			<nav class="mobile_menu">
-				<!-- phone link -->
-				<cms:module
-					name="links"
-					action="show"
-					text_id="phone"
-					template="parts/link.xml"
-					/>
-
-				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
-					<label>
-						<span><cms:text constant="label_search"/></span>
-						<input
-							type="search"
-							name="query"
-							value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
-							cms:optional="value"
-							/>
-					</label>
-					<button type="submit">
-						<cms:text constant="button_search"/>
-					</button>
-				</form>
-
 				<!-- Services links -->
 				<div class="services">
 					<cms:module

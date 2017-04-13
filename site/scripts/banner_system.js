@@ -9,51 +9,53 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.BannerSystem = function(items, banners, increament_size, position) {
-	var self = this;
+Site.move_banners = function(items_selector, banners_selector, normal_per_row, priority_per_row) {
+	var items = document.querySelectorAll(items_selector);
+	var banners = document.querySelectorAll(banners_selector);
 
-	self.items = document.querySelectorAll(items);
-	self.items_container = null;
-	self.banners = document.querySelectorAll(banners);
-	self.start_position = position;
-	self.increament_size = increament_size;
+	// insert banners after two lines
+	var score = 0;
+	var max_rows = 2;
+	var banner_index = 0;
+	var banner_group = 4;  // number of banners in a group
+	var container = items[0].parentNode;
 
-	self._init = function() {
-		// check if there are items
-		if(self.items.length > 0)
-			self.items_container = self.items[0].parentElement;
+	for(var i = 0; i < items.length; i++) {
+		var item = items[i];
 
-		// check if there are banners and remove container of banners
-		if(self.banners.length > 0)
-			self.banners[0].parentElement.remove();
+		// item value for scoring based on number of items in row (5 or 6)
+		var value = item.dataset.priority > 5 ? 1/priority_per_row : 1/normal_per_row;
 
-		// insert banners after two items
-		for(var i = 0; i < self.banners.length; i++) {
-			self.items_container.insertBefore(self.banners[i], self.items_container.childNodes[self.start_position]);
+		// if total score if bigger than maximum (2 rows) insert banners
+		if (score + value > max_rows) {
+			score = 0;
 
-			if(!Site.is_mobile()) {
-				i++;
-				self.items_container.insertBefore(self.banners[i], self.items_container.childNodes[self.start_position]);
+			// insert specified number of banners before the item
+			for(var j = 0; j < banner_group; j++) {
+				var banner = banners[banner_index++];
+				if (banner)
+					container.insertBefore(banner, item);
 			}
-			self.start_position += self.increament_size;
+
+			// break when we run out of banners to insert
+			if (banner_index > banners.length)
+				break;
+
+		// increase score and skip inserting banners
+		} else {
+			score += value;
 		}
 	}
-
-	// initialize object
-	self._init();
 }
 
 $(function() {
 	if(!Site.is_mobile()) {
-		if(document.querySelectorAll('section.category_areas').length > 0)
-			Site.banner_system = new Site.BannerSystem('div.item', 'a.link', 14, 12);
-	}
+		if (document.querySelectorAll('section.category_areas').length > 0)
+			Site.move_banners('div.item', 'a.link', 6, 5);
 
-	if(Site.is_mobile()) {
-		if(window.location.pathname == "/") {
-			Site.home_page_banners = new Site.BannerSystem('a.category', 'a.link', 5, 0);
-		} else {
-			Site.banner_system = new Site.BannerSystem('div.item', 'a.link', 3, 2);
-		}
+	} else {
+		if (window.location.pathname == "/")
+			Site.move_banners('a.category', 'a.link', 2, 2); else
+			Site.move_banners('div.item', 'a.link', 2, 2);
 	}
 })

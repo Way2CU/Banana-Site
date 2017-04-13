@@ -6,6 +6,30 @@
  * Authors: Iliya melishev, Tal Reznic
  */
 
+/*
+ * Link to top
+*/
+
+a.arrow_top {
+	position: fixed;
+	right: 1em;
+	top: 50%;
+	fill: @color_yellow;
+	padding: 1em;
+	transition: all 0.3s;
+}
+
+a.arrow_top:hover {
+	fill: lighten(@color_yellow, 30%);
+	transform: scale(1.1);
+}
+
+a.arrow_top svg {
+	width: 3em;
+	height: 3em;
+	display: block;
+}
+
 section {
 	padding: 2em calc(~'(100% - 1200px)' / 2);
 }
@@ -120,11 +144,15 @@ div.item:hover {
 }
 
 div.item[data-priority^="2"] {
+	width: 216px;
+	height: 386px;
 	background-color: fade(@color_yellow, 20%);
 }
 
 div.item[data-priority^="1"] {
-	background-color: @color_grey;
+	width: 216px;
+	height: 386px;
+	background-color: fade(@color_blue, 20%);
 }
 
 section#search div.category_items.gallery div.item {
@@ -595,7 +623,8 @@ div.intro div.content {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: linear-gradient(180deg, fade(@color_white, 0%) 20%, @color_white);
+	background: fade(@color_white, 70%);
+	padding-top: 1em;
 }
 
 div.intro div.content a.action {
@@ -607,7 +636,7 @@ div.intro div.content a.action {
 }
 
 div.intro div.content a.action:hover {
-	background-color: @color_grey;
+	background-color: lighten(@color_grey, 20%);
 	color: @color_white;
 }
 
