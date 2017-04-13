@@ -7,10 +7,10 @@
  */
 
 // create or use existing site scope
-var Site = Site || {};
+var Site = Site || new Object();
 
 // make sure variable cache exists
-Site.variable_cache = Site.variable_cache || {};
+Site.variable_cache = Site.variable_cache || new Object();
 
 
 /**

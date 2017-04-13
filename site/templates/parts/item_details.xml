@@ -1,30 +1,58 @@
 <document>
+	<meta
+		itemscope="itemscope"
+		itemprop="mainEntityOfPage"
+		itemtype="https://schema.org/WebPage"
+		/>
+	<meta
+		itemprop="datePublished"
+		content="date('c', (int) $params['timestamp'])"
+		cms:eval="content"
+		/>
+	<meta
+		itemprop="dateModified"
+		content="date('c', (int) $params['timestamp'])"
+		cms:eval="content"
+		/>
+
 	<!-- Item title -->
-	<h1><cms:var param="name" multilanguage="yes"/></h1>
+	<h1 itemprop="headline">
+		<cms:var param="name" multilanguage="yes"/>
+	</h1>
 
 	<cms:desktop>
 		<!-- Information -->
 		<div class="information">
-			<cms:markdown param="description" multilanguage="yes"/>
+			<div itemprop="description">
+				<cms:markdown param="description" multilanguage="yes"/>
+			</div>
 
 			<!-- Show phone numbers -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="phone1"
-				template="parts/phone.xml"
-				cms:eval="item"
-				/>
+			<div
+				itemprop="author"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Person"
+				>
+				<span itemprop="name">
+					<cms:module
+						name="shop"
+						action="show_property"
+						item="$params['id']"
+						text_id="phone1"
+						template="parts/phone.xml"
+						cms:eval="item"
+						/>
+				</span>
 
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="phone2"
-				template="parts/phone.xml"
-				cms:eval="item"
-				/>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="phone2"
+					template="parts/phone.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<img
 				class="note"
@@ -32,7 +60,8 @@
 				alt="message"
 				cms:eval="src"
 				/>
-			<!-- show links of categories item belongs to -->
+
+			<!-- Show links of categories item belongs to -->
 			<div class="item_categories">
 				<cms:module
 					name="shop"
@@ -44,6 +73,32 @@
 					cms:eval="item"
 					/>
 			</div>
+
+			<!-- Schema publisher -->
+			<div
+				itemprop="publisher"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Organization"
+				>
+				<figure
+					itemprop="logo"
+					itemscope="itemscope"
+					itemtype="https://schema.org/ImageObject"
+					class="publisher"
+					>
+					<meta itemprop="width" content="75"/>
+					<meta itemprop="height" content="50"/>
+					<img
+						class="logo"
+						itemprop="url"
+						src="_BASEURL.'/site/images/logo.png'"
+						alt="publisher"
+						cms:eval="src"
+						cms:constant="alt"
+						/>
+				</figure>
+				<meta itemprop="name" content="publisher" cms:constant="content"/>
+			</div>
 		</div>
 
 		<!-- Item images -->
@@ -54,6 +109,7 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
+					limit="4"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
@@ -67,6 +123,7 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
+					limit="4"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
@@ -85,9 +142,8 @@
 		</div>
 	</cms:desktop>
 
-	<!-- Mobile version details page -->
 	<cms:mobile>
-			<!-- Item images -->
+		<!-- Item images -->
 		<div class="item_gallery">
 			<!-- Big image container-->
 			<div class="main_image"
@@ -96,6 +152,7 @@
 					name="gallery"
 					action="show_image_list"
 					group_id="$params['gallery']"
+					limit="4"
 					template="parts/item_images.xml"
 					cms:eval="group_id"
 					>
@@ -103,6 +160,20 @@
 				</cms:module>
 			</div>
 
+			<!-- Thumbnail images -->
+			<div class="thumbnails">
+				<cms:module
+					name="gallery"
+					action="show_image_list"
+					group_id="$params['gallery']"
+					limit="4"
+					template="parts/item_images.xml"
+					cms:eval="group_id"
+					>
+					<param name="thumbnail_image" value=""/>
+				</cms:module>
+			</div>
+			
 			<!-- Div controllers -->
 			<div class="controllers">
 				<a href="javascript:void(0)" class="prev">
@@ -114,34 +185,53 @@
 			</div>
 
 			<!-- Information -->
-			<div class="information">
-				<cms:markdown param="description" multilanguage="yes"/>
+			<div
+				class="information"
+				itemprop="publisher"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Organization"
+				>
+				<meta itemprop="name" content="publisher" cms:constant="content"/>
+
+				<div itemprop="description">
+					<cms:markdown param="description" multilanguage="yes"/>
+				</div>
 
 				<!-- Show phone numbers -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone1"
-					template="parts/phone.xml"
-					cms:eval="item"
-					/>
+				<div
+					itemprop="author"
+					itemscope="itemscope"
+					itemtype="https://schema.org/Person"
+					>
+					<span itemprop="name">
+						<cms:module
+							name="shop"
+							action="show_property"
+							item="$params['id']"
+							text_id="phone1"
+							template="parts/phone.xml"
+							cms:eval="item"
+							/>
+					</span>
 
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone2"
-					template="parts/phone.xml"
-					cms:eval="item"
-					/>
+					<cms:module
+						name="shop"
+						action="show_property"
+						item="$params['id']"
+						text_id="phone2"
+						template="parts/phone.xml"
+						cms:eval="item"
+						/>
+				</div>
+
 				<img
 					class="note"
 					src="_BASEURL.'/site/images/footer-note-vector.svg'"
 					alt="message"
 					cms:eval="src"
 					/>
-				<!-- show links of categories item belongs to -->
+
+				<!-- Show links of categories item belongs to -->
 				<div class="item_categories">
 					<cms:module
 						name="shop"

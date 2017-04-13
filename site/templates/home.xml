@@ -6,14 +6,37 @@
 			<title><cms:text constant="site_title"/></title>
 			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
+			<cms:raw file="parts/gtmhead.txt"/>
+			<script type="application/ld+json">
+				{
+					"@context": "http://schema.org",
+					"@type": "WebSite",
+					"url": "http://banana.co.il",
+					"potentialAction": {
+						"@type": "SearchAction",
+						"target": "http://banana.co.il/search?query={search_term_string}",
+						"query-input": "required name=search_term_string"
+					}
+				}
+			</script>
 		</head>
 
 		<body>
-			<!-- Top section of the site -->
+			<cms:raw file="parts/gtmbody.txt"/>
 			<cms:template file="parts/header.xml"/>
 
 			<!-- Desktop version of home page -->
 			<cms:desktop>
+				<!-- SEO article -->
+				<section class="seo_article">
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="seo_article2"
+						template="stock/article_generic.xml"
+						/>
+				</section>
+				
 				<section>
 					<cms:module
 						name="shop"
@@ -47,6 +70,14 @@
 
 			<!-- Mobile version home page -->
 			<cms:mobile>
+				<!-- SEO article -->
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="seo_article"
+					template="stock/article_generic.xml"
+					/>
+					
 				<section>
 					<!-- phone link -->
 					<cms:module
@@ -213,6 +244,13 @@
 					</a>
 
 				</section>
+				<!-- SEO article -->
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="seo_article"
+					template="stock/article_generic.xml"
+					/>
 
 				<!-- Banners-->
 				<div class="commercial">
@@ -243,6 +281,14 @@
 					template="parts/footer_commercial.xml"
 					/>
 			</section>
+
+			<!-- SEO article -->
+			<cms:module
+				name="articles"
+				action="show"
+				text_id="seo_article"
+				template="stock/article_generic.xml"
+				/>
 
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
