@@ -128,7 +128,7 @@ div.item_categories a span,
 section h1 span {
 	display: inline-block;
 	vertical-align: top;
-	background-image: url(../images/massage.svg);
+	background-image: url(../images/massage_regular.svg);
 	background-repeat: no-repeat;
 	background-position: center -10px;
 	background-size: 2.5em 2.5em;
@@ -387,7 +387,7 @@ div.item[data-priority^="2"] a.phone:before {
 section.item_details div.main_image {
 	display: block;
 	width: 100%;
-	min-height: 300px;
+	min-height: 370px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -395,6 +395,7 @@ section.item_details div.main_image {
 section.item_details div.main_image img {
 	position: absolute;
 	top: 0;
+	right: auto !important;
 	left: 50%;
 	transform: translateX(-50%);
 	visibility: hidden;
@@ -466,14 +467,15 @@ section.item_details div.item_categories a {
 	text-decoration: none;
 	color: @color_white;
 	background-color: @color_grey;
-	font-weight: 700;
+	font-weight: 400;
 	padding: 0.5em;
 	margin: 0.5em;
+	font-size: 0.8em;
 	transition: all 0.3s;
 }
 
 section.item_details div.item_categories a span {
-	background-position: center -9px;
+	background-position: center -6px;
 }
 
 /**
