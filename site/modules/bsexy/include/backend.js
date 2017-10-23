@@ -89,6 +89,10 @@ Caracal.add_properties = function(shop_window) {
 	var value = date.getUTCFullYear() + '-' + month + '-' + day + 'T00:00';
 	expiration_field.val(value);
 
+	// set default priority
+	var priority_field = shop_window.container.find('input[name=priority]');
+	priority_field.val('5');
+
 	// data to add
 	var data = {
 			text_id: 'phone',
@@ -135,11 +139,13 @@ Caracal.handle_shop_window_close = function(shop_window) {
 Caracal.update_bsexy_item_list = function(sender) {
 	var items_window = Caracal.window_system.getWindow('bsexy_items');
 	var manufacturer = items_window.container.find('select[name=manufacturer]');
+	var supplier = items_window.container.find('select[name=supplier]');
 	var category = items_window.container.find('select[name=category]');
 
 	// prepare data to send to server
 	var data = {
 			manufacturer: manufacturer.val(),
+			supplier: supplier.val(),
 			category: category.val()
 		};
 
@@ -174,7 +180,7 @@ Caracal.update_tags = function(shop_window) {
 		if (!category.is(':checked'))
 			continue;
 
-		var data = category.data('text-id');
+		var data = category.parent()[0].innerText;
 		if (data)
 			selected.push(data);
 	}
