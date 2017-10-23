@@ -4,15 +4,17 @@
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<cms:module name="head_tag" action="show"/>
-			<cms:raw file="parts/gtmhead.txt"/>
+			<!-- <cms:raw file="parts/gtmhead.txt"/> -->
 		</head>
 
 		<body>
-			<cms:raw file="parts/gtmbody.txt"/>
+			<!-- <cms:raw file="parts/gtmbody.txt"/> -->
 			<cms:template file="parts/header.xml"/>
+
 			<section id="missing">
 				<h2><cms:text constant="message_client_error_404" /></h2>
 			</section>
+
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
 		</body>
