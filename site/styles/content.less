@@ -85,6 +85,29 @@ section > h1 {
 	width: 500px;
 }
 
+section.item_details div.item_categories {
+	a.action {
+		display: inline-block;
+		vertical-align: top;
+		text-decoration: none;
+		color: #ffffff;
+		transition: all 0.3s;
+		font-size: 0.8em;
+
+		&:after {
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			width: 6px;
+			height: 6px;
+			line-height: 100%;
+			background-color: @color_yellow;
+			border-radius: 50%;
+			margin: 0 0.5em;
+		}
+	}
+}
+
 div.item_categories a span,
 section h1 span {
 	display: inline-block;
@@ -295,10 +318,7 @@ section.item_details div.item_categories a {
 	vertical-align: middle;
 	text-decoration: none;
 	color: @color_white;
-	background-color: @color_grey;
 	font-weight: 400;
-
-	margin: 0.5em;
 	font-size: 0.8em;
 	transition: all 0.3s;
 }
