@@ -6,10 +6,9 @@
  * Authors: Iliya melishev, Tal Reznic
  */
 
-/*
+/**
  * Link to top
-*/
-
+ */
 a.arrow_top {
 	position: fixed;
 	right: 1em;
@@ -245,7 +244,7 @@ div.item a.phone:before {
 	width: 100%;
 	height: 0.1em;
 	background:
-	    linear-gradient(135deg, fade(@color_grey, 100%) 10%, @color_yellow 100%);
+	linear-gradient(135deg, fade(@color_grey, 100%) 10%, @color_yellow 100%);
 	transition: all 0.3s;
 }
 
@@ -255,18 +254,18 @@ div.item a.phone:after {
 	bottom: 0;
 	right: 0%;
 	background:
-	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_grey 100%);
+	linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_grey 100%);
 }
 
 
 div.item[data-priority^="2"] a.phone:after {
 	background:
-	    linear-gradient(135deg, transparent 0%, @color_yellow 100%);
+	linear-gradient(135deg, transparent 0%, @color_yellow 100%);
 }
 
 div.item[data-priority^="2"] a.phone:before {
 	background:
-	    linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_white 100%);
+	linear-gradient(135deg, fade(@color_yellow, 100%) 10%, @color_white 100%);
 }
 
 /**
@@ -675,4 +674,52 @@ div.intro div.content article {
 	margin-right: auto;
 	width: 70%;
 	color: @color_black;
+}
+
+/**
+ * New items on site
+ */
+div#new_items {
+	position: relative;
+	min-height: 220px;
+	margin-top: 2rem;
+	overflow: hidden;
+
+	div.item {
+		position: absolute;
+		width: 120px;
+		height: 220px;
+		opacity: 0;
+		pointer-events: none;
+
+		transition: all 0.3s, right 1s, opacity 1s;
+		transition-timing-function: linear, ease-in-out, linear;
+
+		> a {
+			height: auto;
+		}
+
+		&.transit {
+			opacity: 0;
+			transition: none;
+		}
+
+		&.visible {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		h4 {
+			margin: 0;
+			margin-top: 0.3rem;
+			padding: 0 0.3rem;
+			font-size: 0.7rem;
+			text-align: center;
+		}
+
+		a.phone {
+			background-color: @color_yellow;
+			color: @color_black;
+		}
+	}
 }

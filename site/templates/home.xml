@@ -9,14 +9,14 @@
 			<!-- <cms:raw file="parts/gtmhead.txt"/> -->
 			<script type="application/ld+json">
 				{
-					"@context": "http://schema.org",
-					"@type": "WebSite",
-					"url": "http://banana.co.il",
-					"potentialAction": {
-						"@type": "SearchAction",
-						"target": "http://banana.co.il/search?query={search_term_string}",
-						"query-input": "required name=search_term_string"
-					}
+				"@context": "http://schema.org",
+				"@type": "WebSite",
+				"url": "http://banana.co.il",
+				"potentialAction": {
+				"@type": "SearchAction",
+				"target": "http://banana.co.il/search?query={search_term_string}",
+				"query-input": "required name=search_term_string"
+				}
 				}
 			</script>
 		</head>
@@ -27,16 +27,29 @@
 
 			<!-- Desktop version of home page -->
 			<cms:desktop>
+				<!-- Items new to the site -->
+				<div id="new_items">
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						order_by="id"
+						order_asc="0"
+						limit="20"
+						template="parts/new_items.xml"
+						/>
+				</div>
+
 				<!-- SEO article -->
 				<section class="seo_article">
 					<cms:module
 						name="articles"
 						action="show"
 						text_id="seo_article2"
-						template="stock/article_generic.xml"
+						template="stock/new_items.xml"
 						/>
 				</section>
-				
+
+				<!-- Items in separate categories -->
 				<section>
 					<cms:module
 						name="shop"
@@ -77,7 +90,7 @@
 					text_id="seo_article"
 					template="stock/article_generic.xml"
 					/>
-					
+
 				<section>
 					<!-- phone link -->
 					<cms:module

@@ -79,31 +79,45 @@ Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
 
-		// condition for showing agreement page
+	// condition for showing agreement page
 	if(!localStorage.getItem('agreement')) {
 		localStorage.setItem('agreement', true);
 		Site.load_agreement();
 	}
 
 	// Gallery controller for thumbnails
-		Site.thumbnails = new Caracal.Gallery.Slider(3, true);
-		Site.thumbnails
-			.controls.attach_next($('div.controllers a.next'))
-			.controls.attach_previous($('div.controllers a.prev'))
-			.images.set_container('div.thumbnails')
-			.images.set_step_size(1)
-			.images.add('div.thumbnails img.thumbnail');
-			Site.thumbnails.images.update();
+	Site.thumbnails = new Caracal.Gallery.Slider(3, true);
+	Site.thumbnails
+		.controls.attach_next($('div.controllers a.next'))
+		.controls.attach_previous($('div.controllers a.prev'))
+		.images.set_container('div.thumbnails')
+		.images.set_step_size(1)
+		.images.add('div.thumbnails img.thumbnail');
+	Site.thumbnails.images.update();
 
-		// Gallery controller for main image
-		Site.main_image = new Caracal.Gallery.Slider(1, false);
-		Site.main_image
-			.controls.attach_next($('div.controllers a.next'))
-			.controls.attach_previous($('div.controllers a.prev'))
-			.images.set_container('div.main_image')
-			.images.set_step_size(1)
-			.images.add('div.main_image img.big_image');
-		Site.main_image.images.update();
+	// Gallery controller for main image
+	Site.main_image = new Caracal.Gallery.Slider(1, false);
+	Site.main_image
+		.controls.attach_next($('div.controllers a.next'))
+		.controls.attach_previous($('div.controllers a.prev'))
+		.images.set_container('div.main_image')
+		.images.set_step_size(1)
+		.images.add('div.main_image img.big_image');
+	Site.main_image.images.update();
+
+	// create slider for new items on site
+	Site.new_items_gallery = null;
+	if (document.querySelector('div#new_items') && !Site.is_mobile()) {
+		Site.new_items_gallery = new Caracal.Gallery.Slider(9);
+		Site.new_items_gallery
+				.images.add('div#new_items div.item')
+				.images.set_container('div#new_items')
+				.images.set_center(true)
+				.images.set_spacing(20)
+				.controls.set_auto(3000)
+				.controls.set_pause_on_hover(true)
+				.images.update();
+	}
 };
 
 
